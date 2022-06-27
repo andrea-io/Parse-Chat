@@ -20,6 +20,8 @@
 
 - (IBAction)sendMessageButton:(id)sender {
     PFObject *chatMessage = [PFObject objectWithClassName:@"Message_FBU2021"];
+    PFUser *user = chatMessage[@"user"];
+    user = PFUser.currentUser;
     
     // Retrieve the text message the user typed
     chatMessage[@"text"] = self.messageTextField.text;
@@ -63,6 +65,9 @@
     // Sort the query results
     [query orderByDescending:@"createdAt"];
     
+    // Instruct Parse to fetch the related user when we query for messages
+    [query includeKey:@"user"];
+    
     // Fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
@@ -89,7 +94,18 @@
     
     ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell" forIndexPath:indexPath];
     NSDictionary *message = self.messages[indexPath.row];
+    
     cell.chatMessageLabel.text = message[@"text"];
+    PFUser *user = message[@"user"];
+    
+    // If a chat message has the user property set, set the username label to the user's username
+    if (user != nil) {
+        // User found! Update username label with username
+        cell.usernameLabel.text = user.username;
+    } else {
+        // No user found, set default username
+        cell.usernameLabel.text = @"🤖";
+    }
     
     return cell;
 }

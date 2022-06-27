@@ -124,17 +124,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat message here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jk-Md-LUq">
-                                                    <rect key="frame" x="20" y="11" width="374" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat message here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jk-Md-LUq">
+                                                    <rect key="frame" x="28" y="28" width="146" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sis-9O-Cg8">
+                                                    <rect key="frame" x="28" y="5.5" width="166" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Sis-9O-Cg8" firstAttribute="leading" secondItem="Fjr-Km-IGt" secondAttribute="leadingMargin" constant="8" id="6Lj-Rm-YBx"/>
+                                                <constraint firstItem="Sis-9O-Cg8" firstAttribute="top" secondItem="Fjr-Km-IGt" secondAttribute="top" constant="5.5" id="Cmx-Xs-KD8"/>
+                                                <constraint firstAttribute="trailing" secondItem="Sis-9O-Cg8" secondAttribute="trailing" constant="220" id="Y5V-gW-UbS"/>
+                                                <constraint firstItem="5jk-Md-LUq" firstAttribute="top" secondItem="Sis-9O-Cg8" secondAttribute="bottom" constant="2" id="ekm-R3-fWH"/>
+                                                <constraint firstItem="5jk-Md-LUq" firstAttribute="leading" secondItem="Fjr-Km-IGt" secondAttribute="leadingMargin" constant="8" id="fz2-c3-tYx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5jk-Md-LUq" secondAttribute="trailing" constant="220" id="nxC-FG-gSf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5jk-Md-LUq" secondAttribute="bottom" constant="0.5" id="su7-37-HVV"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="chatMessageLabel" destination="5jk-Md-LUq" id="2e2-ln-iam"/>
+                                            <outlet property="usernameLabel" destination="Sis-9O-Cg8" id="s3s-zk-l2y"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
