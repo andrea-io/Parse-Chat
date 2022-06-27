@@ -15,7 +15,18 @@
 @implementation LoginViewController
 
 - (IBAction)loginUser:(id)sender {
-    
+    // Retrieve user-entered username and password from text fields
+    NSString *username = self.userNameTextField.text;
+    NSString *password = self.passwordTextField.text;
+        
+    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+        if (error != nil) {
+            NSLog(@"User log in failed: %@", error.localizedDescription);
+        } else {
+            NSLog(@"User logged in successfully");
+            // Display view controller that needs to be shown after successful login
+        }
+    }];
 }
 
 - (IBAction)registerUser:(id)sender {
@@ -27,7 +38,7 @@
     // newUser.email = self.emailField.text;
     newUser.password = self.passwordTextField.text;
         
-    // Call sign up function on the user object
+    // Call sign up functRion on the user object
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
             NSLog(@"Error: %@", error.localizedDescription);
