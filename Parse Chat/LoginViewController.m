@@ -18,6 +18,24 @@
     // Retrieve user-entered username and password from text fields
     NSString *username = self.userNameTextField.text;
     NSString *password = self.passwordTextField.text;
+    
+    // Check if the user left either the username and/or password fields empty
+    if ([username isEqual:@""] || [password isEqual:@""]) {
+        // Create alert controller for empty username and/or password text fields
+        UIAlertController *emptyFieldAlert = [UIAlertController alertControllerWithTitle:@"Username and Password Required" message:@"Please enter your username and password" preferredStyle:(UIAlertControllerStyleAlert)];
+
+        // Create an OK action
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            // handle response here.
+        }];
+        
+        // Add the OK action to the alert controller
+        [emptyFieldAlert addAction:okAction];
+        
+        [self presentViewController:emptyFieldAlert animated:YES completion:^{
+            // optional code for what happens after the alert controller has finished presenting
+        }];
+    }
         
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
