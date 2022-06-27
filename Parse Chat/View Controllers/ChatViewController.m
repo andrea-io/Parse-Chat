@@ -29,6 +29,9 @@
         if (succeeded) {
             NSLog(@"The message was saved!");
             
+            // Reload the tableView now that there is new data
+             [self.chatTableView reloadData];
+            
             // Clear the text from the text chat field on successful message save
             chatMessage[@"text"] = @"";
         } else {
@@ -48,19 +51,27 @@
 }
 
 - (void)onTimer {
+   // Add code to be run periodically
+    [self refreshData];
+}
+
+- (void)refreshData {
     // Construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Message_FBU2021"];
-    [query whereKey:@"likesCount" greaterThan:@100];
-    
     query.limit = 20;
-
+    
+    // Sort the query results
+    [query orderByDescending:@"createdAt"];
+    
     // Fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
-            [query orderByDescending:@"createdAt"];
+            self.messages = posts;
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
+        // Reload the tableView now that there is new data
+        [self.chatTableView reloadData];
     }];
 }
 
@@ -74,9 +85,14 @@
 }
 */
 
-//- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-//    <#code#>
-//}
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
+    ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell" forIndexPath:indexPath];
+    NSDictionary *message = self.messages[indexPath.row];
+    cell.chatMessageLabel.text = message[@"text"];
+    
+    return cell;
+}
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.messages.count;
