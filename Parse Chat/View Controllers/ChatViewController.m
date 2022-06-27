@@ -20,8 +20,7 @@
 
 - (IBAction)sendMessageButton:(id)sender {
     PFObject *chatMessage = [PFObject objectWithClassName:@"Message_FBU2021"];
-    PFUser *user = chatMessage[@"user"];
-    user = PFUser.currentUser;
+    chatMessage[@"user"] = PFUser.currentUser;
     
     // Retrieve the text message the user typed
     chatMessage[@"text"] = self.messageTextField.text;
