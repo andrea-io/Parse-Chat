@@ -43,6 +43,7 @@
         } else {
             NSLog(@"User logged in successfully");
             // Display view controller that needs to be shown after successful login
+            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         }
     }];
 }
@@ -81,6 +82,7 @@
         } else {
             NSLog(@"User registered successfully");
             // Manually segue to logged in view
+            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         }
     }];
 }
