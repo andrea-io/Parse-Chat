@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ChatViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *sendMessageButton;
+@property (weak, nonatomic) IBOutlet UITextField *messageTextField;
+
 @end
 
 NS_ASSUME_NONNULL_END

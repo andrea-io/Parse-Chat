@@ -13,6 +13,10 @@
 
 @implementation ChatViewController
 
+- (IBAction)sendMessageButton:(id)sender {
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
