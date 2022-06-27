@@ -11,7 +11,7 @@
 		85FA867CAE9F7A4CAC1BFE64 /* Pods_Parse_Chat_Parse_ChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993940A4D378E8060EF0B353 /* Pods_Parse_Chat_Parse_ChatUITests.framework */; };
 		BAC771F5286A09AA006F49DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC771F4286A09AA006F49DB /* AppDelegate.m */; };
 		BAC771F8286A09AA006F49DB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC771F7286A09AA006F49DB /* SceneDelegate.m */; };
-		BAC771FB286A09AA006F49DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC771FA286A09AA006F49DB /* ViewController.m */; };
+		BAC771FB286A09AA006F49DB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC771FA286A09AA006F49DB /* LoginViewController.m */; };
 		BAC771FE286A09AA006F49DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC771FC286A09AA006F49DB /* Main.storyboard */; };
 		BAC77200286A09AB006F49DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAC771FF286A09AB006F49DB /* Assets.xcassets */; };
 		BAC77203286A09AB006F49DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC77201286A09AB006F49DB /* LaunchScreen.storyboard */; };
@@ -52,8 +52,8 @@
 		BAC771F4286A09AA006F49DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BAC771F6286A09AA006F49DB /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		BAC771F7286A09AA006F49DB /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		BAC771F9286A09AA006F49DB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BAC771FA286A09AA006F49DB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BAC771F9286A09AA006F49DB /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		BAC771FA286A09AA006F49DB /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BAC771FD286A09AA006F49DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAC771FF286A09AB006F49DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAC77202286A09AB006F49DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 				BAC771F4286A09AA006F49DB /* AppDelegate.m */,
 				BAC771F6286A09AA006F49DB /* SceneDelegate.h */,
 				BAC771F7286A09AA006F49DB /* SceneDelegate.m */,
-				BAC771F9286A09AA006F49DB /* ViewController.h */,
-				BAC771FA286A09AA006F49DB /* ViewController.m */,
+				BAC771F9286A09AA006F49DB /* LoginViewController.h */,
+				BAC771FA286A09AA006F49DB /* LoginViewController.m */,
 				BAC771FC286A09AA006F49DB /* Main.storyboard */,
 				BAC771FF286A09AB006F49DB /* Assets.xcassets */,
 				BAC77201286A09AB006F49DB /* LaunchScreen.storyboard */,
@@ -163,7 +163,6 @@
 				17B3EFAB6A9DD48FDCE8ECAA /* Pods-Parse ChatTests.debug.xcconfig */,
 				D2517895ACD02BBE59A68FF4 /* Pods-Parse ChatTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -415,7 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAC771FB286A09AA006F49DB /* ViewController.m in Sources */,
+				BAC771FB286A09AA006F49DB /* LoginViewController.m in Sources */,
 				BAC771F5286A09AA006F49DB /* AppDelegate.m in Sources */,
 				BAC77206286A09AB006F49DB /* main.m in Sources */,
 				BAC771F8286A09AA006F49DB /* SceneDelegate.m in Sources */,
