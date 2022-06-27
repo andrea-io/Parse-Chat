@@ -44,11 +44,24 @@
     self.chatTableView.dataSource = self;
     self.chatTableView.rowHeight = UITableViewAutomaticDimension;
     
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
 }
 
 - (void)onTimer {
-   // Add code to be run periodically
+    // Construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Message_FBU2021"];
+    [query whereKey:@"likesCount" greaterThan:@100];
     
+    query.limit = 20;
+
+    // Fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            [query orderByDescending:@"createdAt"];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 /*
