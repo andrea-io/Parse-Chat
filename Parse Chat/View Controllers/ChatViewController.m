@@ -48,6 +48,11 @@
     self.chatTableView.dataSource = self;
     self.chatTableView.rowHeight = UITableViewAutomaticDimension;
     
+    // STRETCH FEATURE
+    //self.chatTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.bubbleView.layer.cornerRadius = 16;
+    //self.bubbleView.clipsToBounds = true;
+    
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
 }
 
